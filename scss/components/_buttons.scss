@@ -1,0 +1,62 @@
+@import '../variables';
+@import '../mixins';
+
+.card__btn-trail {
+    display: block;
+    padding: 1em 4em;
+    border: none;
+    border-radius: 3em;
+    font-weight: 800;
+    margin: 2em auto;
+
+    &.card__btn-trail--color {
+        background-color: $Dark-Desaturated-Blue;
+        color: $Light-Grayish-Blue;
+
+        &:hover {
+            cursor: pointer;
+            color: $White;
+        }
+    }
+
+    @include screen-lg {
+        & {
+            margin: 0;
+        }
+    }
+
+}
+
+input[type="checkbox"]{
+    position: relative;
+    width: 60px;
+    height: 30px;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: $Light-Grayish-Blue;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background: $Strong-Cyan;
+    transition: .5s;
+}
+
+input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: $White;
+    top: 5px;
+    left: 5px;
+    transition: .5s;
+}
+
+input[type="checkbox"]:checked::before {
+    left: 35px
+}

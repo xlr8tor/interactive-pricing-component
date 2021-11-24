@@ -1,0 +1,171 @@
+@import '_variables.scss';
+@import '_reset.scss';
+@import '_mixins';
+@import './components/buttons';
+@import './components/slider';
+
+body {
+    background: url('../images/bg-pattern.svg') no-repeat;
+    color: $Grey;
+    height: 100vh;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.hero {
+    background: url('../images/pattern-circles.svg') no-repeat center;
+    text-align: center;
+    padding-block: 3em 2em;
+
+    @include screen-lg {
+        padding-block: 7em;
+    }
+
+    &__heading {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: $Dark-Desaturated-Blue;
+    }
+
+    & > *:not(:nth-child(1)){
+        margin-block: .5em;
+        color: $Dark-Desaturated-Blue;
+        opacity: .6;
+
+        @include screen-lg {
+            & {
+                display: inline;
+                
+            }
+        }
+        
+    }
+}
+
+.card {
+    background-color: $White;
+    margin: 2em 1em;
+    border-radius: .6rem;
+    box-shadow: 0px 25px 35px darken($Very-Pale-Blue,4%);
+    padding: 1em 0;
+
+    &__list {
+        list-style: none;
+        text-align: center;
+        padding: 1em 1em 0;
+
+        &-item {
+            margin-block: 1em;
+        }
+        &-item::before {
+            content: url('../images/icon-check.svg');
+            padding-inline-end: 1em;
+        }
+    }
+
+    &__package-info {
+        padding: 2em 1.25em 0;
+
+        .pageviews {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    
+        .price {
+            & span {
+                font-size: 2.25rem;
+                font-weight: 800;
+                vertical-align: middle;
+                color: $Dark-Desaturated-Blue;
+            }
+        }
+
+        .range {
+            width: 100%
+        }
+
+        @include screen-lg {
+            & {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                padding: 3em 3em 0;
+            }
+
+            .pageviews {
+                order: -2;
+            }
+
+            .price {
+                order: -1;
+
+                span {
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+
+    &__billing-info {
+        padding: 2em 1.25em;
+        border-bottom: 1px solid rgba($Pale-Blue,.3);
+         @include screen-lg {
+            padding: 1em 3em 2em;
+         }
+
+        span {
+            background-color: $Light-Grayish-Red;
+            color: $Light-Red;
+            padding-block: .3em;
+            padding-inline: .6em;
+            border-radius: 1rem;
+
+            @include screen-lg {
+                & {
+                   font-size: 0;
+                   
+                }
+
+                &::before {
+                    content: '25% discount';
+                    font-size: initial;
+                    padding-block: .3em;
+                    padding-inline: .6em;
+                }
+               
+            }
+        }
+    }
+
+    @include screen-lg {
+        & {
+            padding: 0;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        &__bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3em;
+        }
+
+        &__list {
+            text-align: initial;
+            padding: 0;
+        }
+    }
+}

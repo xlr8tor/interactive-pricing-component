@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/app.css">
+  <script src="./js/app.js" defer></script>
+  <title>Frontend Mentor | Interactive pricing component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <p class="hero__heading">
+        Simple, traffic-based pricing
+      </p>
+      <p>Sign-up for our 30-day trial.</p>
+      <p>No credit card required. </p>
+    </div>  
+    <div class="card">
+      <div class="card__package-info column">
+        <p class="pageviews"><span>100K</span> Pageviews</p>
+        <div class="range">
+          <input type="range" min="0" max="100" value="50" step="25">
+        </div>
+        <p class="price"><span>$16.00</span> /month</p>
+      </div>
+      <div class="card__billing-info row">
+        <p>Monthly Billing</p>
+        <input type="checkbox">
+        <p>Yearly Billing</p>
+        <span>- 25%</span>
+      </div>
+    
+      <div class="card__bottom">
+        <ul class="card__list">
+          <li class="card__list-item">Unlimited websites</li>
+          <li class="card__list-item">100% data ownership</li>
+          <li class="card__list-item">Email reports</li>
+        </ul>
+        <button class="card__btn-trail card__btn-trail--color">
+          Start my trial
+        </button> 
+      </div> 
+    </div>
+  
+  
+  
+    
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Jeremiah Charles</a>.
+    </div>
+  </div>
+  
+</body>
+</html>
